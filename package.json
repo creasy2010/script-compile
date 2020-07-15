@@ -11,9 +11,6 @@
       "docs": "Document"
     }
   },
-  "publishConfig": {
-    "registory": "http://221.226.82.254:7001/"
-  },
   "scripts": {
     "compile": "lerna run prepublishOnly",
     "i": "npm install && lerna bootstrap",

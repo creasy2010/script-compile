@@ -7,8 +7,11 @@
  * @Date    2020/7/15
  **/
 
+import {compile} from "../index";
+
 describe('11', () => {
   it('11', async () => {
-    expect('hello').toEqual("hello");
+    let {ast,code}  = compile("let a  =1;console.log(111)");
+    expect(code).toEqual("hello");
   });
 });

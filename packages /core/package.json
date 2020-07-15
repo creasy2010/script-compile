@@ -12,7 +12,8 @@
   },
   "author": "杨晓东",
   "license": "ISC",
-  "dependencies": {
-    "cos-js-sdk-v5": "^0.5.26"
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.5"
   }
 }
