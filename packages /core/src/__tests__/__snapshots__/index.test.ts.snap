@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`基础编译 基本转换: 序号:0 1`] = `
+"let a = 1;
+console.log(111);"
+`;
+
+exports[`基础编译 基本转换: 序号:1 1`] = `
+"async function test() {
+  let {
+    data
+  } = await api.get();
+}"
+`;

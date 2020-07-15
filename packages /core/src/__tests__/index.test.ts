@@ -9,9 +9,19 @@
 
 import {compile} from "../index";
 
-describe('11', () => {
-  it('11', async () => {
-    let {ast,code}  = compile("let a  =1;console.log(111)");
-    expect(code).toEqual("hello");
+describe('基础编译', () => {
+  it('基本转换', async () => {
+
+    for (let i = 0, iLen = codes.length; i < iLen; i++) {
+      let code1 = codes[i];
+      let result  = compile(code1,{ast:true});
+      debugger;
+      expect(result.code).toMatchSnapshot("序号:"+i);
+    }
   });
 });
+
+let codes =[
+  "let a  =1;console.log(111)",
+  'async function test (){let {data} = await api.get()}'
+]

@@ -8,7 +8,8 @@
  **/
 
 import * as babel from  '@babel/core';
+import {TransformOptions} from "@babel/core";
 
-export function compile(code:string){
-  return babel.transform("console.log(11)", {});
+export function compile(code:string,opt?:TransformOptions){
+  return babel.transform(code, opt);
 }
