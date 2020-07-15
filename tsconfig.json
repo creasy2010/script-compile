@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationDir": "typings",
+    "paths": {
+      "@": ["src"]
+    }
+  }
+}
