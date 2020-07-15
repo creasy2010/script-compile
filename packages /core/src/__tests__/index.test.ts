@@ -23,5 +23,7 @@ describe('基础编译', () => {
 
 let codes =[
   "let a  =1;console.log(111)",
-  'async function test (){let {data} = await api.get()}'
+  `async function test (){
+     let {data} = await api.get();
+   }`
 ]
