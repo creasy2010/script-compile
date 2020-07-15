@@ -12,7 +12,9 @@
   },
   "author": "杨晓东",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/template": "^7.10.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5"
   }
