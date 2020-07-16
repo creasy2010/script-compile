@@ -10,7 +10,7 @@
 import * as babel from  '@babel/core';
 import {TransformOptions} from "@babel/core";
 import  template from '@babel/template'
-
+import PresetTypescript from "@babel/preset-typescript";
 
 
 export function compileExpress(code:string,opt?:TransformOptions){
@@ -22,7 +22,7 @@ ${code}
   return compile(wrapSource,{
     ...opt,
     filename:"auto-gene/script.ts",
-    presets: ["@babel/preset-typescript"],
+    presets: [PresetTypescript],
     plugins: [{
       visitor:  {
         ExpressionStatement(path){

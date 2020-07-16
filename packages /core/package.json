@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.10.5",
+    "@babel/preset-typescript": "^7.10.4",
     "@babel/template": "^7.10.4"
   },
   "devDependencies": {
