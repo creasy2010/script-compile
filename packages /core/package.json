@@ -1,5 +1,5 @@
 {
-  "name": "script-compile-core",
+  "name": "@paas/script-compile-core",
   "version": "0.0.0-alpha.1",
   "description": "",
   "main": "lib/index.js",
@@ -13,9 +13,12 @@
   "author": "杨晓东",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-typescript": "^7.10.5",
     "@babel/template": "^7.10.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5"
+    "@types/clipboard": "^2.0.1",
+    "@types/sockjs-client": "^1.1.1"
   }
 }

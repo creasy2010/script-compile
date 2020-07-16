@@ -20,12 +20,14 @@ export function compileExpress(code:string,opt?:TransformOptions){
 ${code}
 })()`;
   return compile(wrapSource,{
+    ...opt,
+    filename:"auto-gene/script.ts",
+    presets: ["@babel/preset-typescript"],
     plugins: [{
       visitor:  {
         ExpressionStatement(path){
           let isEndExp = path.node.end==wrapSource.length-5;
           if(isEndExp) {
-            debugger;
             let result  = path.getSource();
             if(!result.includes('return')) {
               path.replaceWith( babel.template.statement.ast`return ${path.getSource()}`);
