@@ -43,6 +43,25 @@ describe('基础编译', () => {
 });
 
 
+describe('异常流程', () => {
+  it('禁止内部自定义方法', async () => {
+    const errorHandel = jest.fn();
+    try {
+     compileExpress(`console.log(1231);
+    ()=>{
+      console.log('方法定义会导致报错');
+    }
+    console.log(1231);
+    `);
+    } catch (err) {
+      // console.log(err);
+      errorHandel()
+    }
+    expect(errorHandel).toBeCalledTimes(1);
+  });
+});
+
+
 let codes =[
   "let a  =1;console.log(111)",
   `async function test (){

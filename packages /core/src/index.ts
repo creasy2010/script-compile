@@ -36,20 +36,33 @@ let plugins = [
   PluginOptionalChaining(mockApi,{}),]
 
 
+/**
+ * 编译 表达式. 目前不允许定义内部方法;
+ * @param code
+ * @param opt
+ */
 export function compileExpress(code:string,opt?:TransformOptions){
   //是不是要把最后一行添加一个return;
 
   let wrapSource = `(async ()=>{
 ${code}
 })()`;
+  //禁止内部再定义方法. 只允许外部有一个方法定义
+  let functionCount=0;
 
-  return compile(wrapSource,{
+  let result =  compile(wrapSource,{
     ...opt,
     filename:"auto-gene/script.ts",
     presets,
     plugins: [
       {
       visitor:  {
+        ArrowFunctionExpression(path){
+          functionCount++;
+        },
+        FunctionExpression(path){
+          functionCount++;
+        },
         ExpressionStatement(path){
           let isEndExp = path.node.end==wrapSource.length-5;
           if(isEndExp) {
@@ -69,6 +82,11 @@ ${code}
       }
     }].concat(plugins)
   });
+
+  if(functionCount>1) {
+    throw new Error('不支持内部定义方法,请尝试其他方法');
+  }
+  return result;
 }
 
 
