@@ -82,7 +82,7 @@ ${code}
   });
 
   if(functionCount>1) {
-    throw new Error('不支持内部定义方法,请尝试其他方法');
+    throw new Error('不支持内部定义方法,请尝试其他方法1111');
   }
   return result;
 }

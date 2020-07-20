@@ -3,3 +3,5 @@ target
 *.iml
 node_modules
 lib
+.cache
+dist

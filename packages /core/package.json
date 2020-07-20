@@ -1,10 +1,12 @@
 {
   "name": "@paas/script-compile-core",
-  "version": "0.0.0-alpha.2",
+  "version": "0.0.0-alpha.3",
   "description": "",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
+    "build11": "rollup -c",
+    "build": "parcel src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
@@ -23,6 +25,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.10.4",
     "@babel/plugin-transform-typescript": "^7.10.5",
     "@types/clipboard": "^2.0.1",
-    "@types/sockjs-client": "^1.1.1"
+    "@types/sockjs-client": "^1.1.1",
+    "rollup-plugin-json": "^4.0.0"
   }
 }
