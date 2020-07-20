@@ -68,8 +68,6 @@ ${code}
           if(isEndExp) {
             let result  = path.getSource();
             if(!result.includes('return')) {
-              debugger;
-
               let result  =babelParser.parse(`return ${path.getSource()}`,{
                 allowAwaitOutsideFunction:true,
                 allowReturnOutsideFunction:true,

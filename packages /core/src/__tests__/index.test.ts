@@ -14,7 +14,6 @@ describe('基础编译', () => {
     for (let i = 0, iLen = codes.length; i < iLen; i++) {
       let code1 = codes[i];
       let result  = compile(code1,{ast:true});
-      debugger;
       expect(result.code).toMatchSnapshot("序号:"+i);
     }
   });
