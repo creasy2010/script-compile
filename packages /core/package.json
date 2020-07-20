@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
-    "build11": "rollup -c",
-    "build": "parcel src/index.ts",
+    "build": " parcel build src/index.ts -o index.js ; rm -rdf typings ; tsc ;echo 打包成功!",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
